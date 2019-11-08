@@ -1,0 +1,15 @@
+name: 'Inspect the Docker Image using Dive'
+description: 'Build the container'
+inputs:
+  dockerimage:
+    description: 'Container to scan'
+    required: true
+    default: 'container:latest'
+outputs:
+  report:
+    description: 'The results of the Docker build'
+runs:
+  using: 'docker'
+  image: 'wagoodman/dive'
+  args:
+    - --ci --highestWastedBytes "100000000" -j diveReport.json --highest:wUserWastedPercent "0.5" --lowestEfficiency "0.8" ${{ inputs.dockerimage }}
