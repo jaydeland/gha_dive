@@ -13,10 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build Docker Images
-      run: |
-        docker build -t ruby:2.6.5 .
+      run: docker build -t ruby:2.6.5 .
 
     - name: Run the Dive utility
       uses: jaydeland/gha_dive@master
       with:
         dockerimage: ruby:2.6.5
+
+    - name: Dive Report
+      run: echo diveReport.json
