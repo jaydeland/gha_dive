@@ -21,4 +21,4 @@ jobs:
         dockerimage: ruby:2.6.5
 
     - name: Dive Report
-      run: cat diveReport.json
+      run: sudo apt-get install -y tree && tree
