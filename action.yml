@@ -15,6 +15,6 @@ runs:
     - ${{ inputs.dockerimage }}
     - '--ci'
     - '-j diveReport.json'
-    - '--highestUserWastedPercent "0.5"'
-    - '--lowestEfficiency "0.8"'
-    - '--highestWastedBytes "100000000"'
+    # - '--highestUserWastedPercent "0.5"'
+    # - '--lowestEfficiency "0.8"'
+    # - '--highestWastedBytes "100000000"'
