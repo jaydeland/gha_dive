@@ -1,0 +1,27 @@
+name: Build-Test-Deploy-Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build Docker Images
+      run: |
+        docker build -t ruby:2.6.5 .
+
+  docker_dive:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+    - name: Run the Dive utility
+      uses: jaydeland/gha_dive@master
+      with:
+        dockerimage: 'ruby:2.6.5'

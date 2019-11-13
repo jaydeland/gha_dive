@@ -10,6 +10,12 @@ outputs:
     description: 'The results of the Docker build'
 runs:
   using: 'docker'
-  image: 'wagoodman/dive'
-  args:
-    - --ci --highestWastedBytes "100000000" -j diveReport.json --highest:wUserWastedPercent "0.5" --lowestEfficiency "0.8" ${{ inputs.dockerimage }}
+  image: 'docker://wagoodman/dive:latest'
+    args:
+      - -v /var/run/docker.sock:/var/run/docker.sock
+      - --ci 
+      - --highestWastedBytes "100000000" 
+      - -j diveReport.json 
+      - --highest:wUserWastedPercent "0.5" 
+      - --lowestEfficiency "0.8" 
+      - ${{ inputs.dockerimage }}
