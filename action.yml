@@ -14,7 +14,7 @@ runs:
   args:
     - ${{ inputs.dockerimage }}
     - '--ci'
-    - '-j diveReport.json'
+    - '--json=diveReport.json'
     # - '--highestUserWastedPercent "0.5"'
     # - '--lowestEfficiency "0.8"'
     # - '--highestWastedBytes "100000000"'
