@@ -21,4 +21,4 @@ jobs:
         dockerimage: ruby:2.6.5
 
     - name: Dive Report
-      run: echo diveReport.json
+      run: cat diveReport.json
