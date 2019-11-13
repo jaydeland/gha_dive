@@ -13,8 +13,8 @@ runs:
   image: 'docker://wagoodman/dive:latest'
   args:
     - '--ci'
-    - '--highestWastedBytes "100000000"'
     - '-j diveReport.json'
-    - '--highest:wUserWastedPercent "0.5"'
+    - '--highestUserWastedPercent "0.5"'
     - '--lowestEfficiency "0.8"'
+    - '--highestWastedBytes "100000000"'
     - ${{ inputs.dockerimage }}
