@@ -10,7 +10,8 @@ outputs:
     description: 'The results of the Docker build'
 runs:
   using: 'docker'
-  image: 'docker://wagoodman/dive:latest'
+  image: 'Dockerfile'
+  # image: 'docker://wagoodman/dive:latest'
   args:
     - ${{ inputs.dockerimage }}
     - '--ci'
