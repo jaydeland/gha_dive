@@ -12,7 +12,6 @@ runs:
   using: 'docker'
   image: 'docker://wagoodman/dive:latest'
   args:
-    - '-v /var/run/docker.sock:/var/run/docker.sock'
     - '--ci'
     - '--highestWastedBytes "100000000"'
     - '-j diveReport.json'
