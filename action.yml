@@ -12,10 +12,10 @@ runs:
   using: 'docker'
   image: 'docker://wagoodman/dive:latest'
     args:
-      - -v /var/run/docker.sock:/var/run/docker.sock
-      - --ci 
-      - --highestWastedBytes "100000000" 
-      - -j diveReport.json 
-      - --highest:wUserWastedPercent "0.5" 
-      - --lowestEfficiency "0.8" 
+      - '-v /var/run/docker.sock:/var/run/docker.sock'
+      - '--ci'
+      - '--highestWastedBytes "100000000"'
+      - '-j diveReport.json'
+      - '--highest:wUserWastedPercent "0.5"'
+      - '--lowestEfficiency "0.8"'
       - ${{ inputs.dockerimage }}
