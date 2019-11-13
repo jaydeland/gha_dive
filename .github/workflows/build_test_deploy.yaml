@@ -24,4 +24,4 @@ jobs:
     - name: Run the Dive utility
       uses: jaydeland/gha_dive@master
       with:
-        dockerimage: 'ruby:2.6.5'
+        dockerimage: ruby:2.6.5
